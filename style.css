@@ -1,0 +1,76 @@
+/* Backlink Monitoring Tool welcome pages. Static, local assets only. */
+:root {
+  color-scheme: light;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: #fff; }
+body {
+  margin: 0;
+  color: #101c34;
+  background: #fff;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  width: min(calc(100% - 40px), 1000px);
+  margin: 0 auto;
+  padding: 27px 0 68px;
+}
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 25px;
+}
+.page-header img {
+  display: block;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(25px, 3.55vw, 40px);
+  font-weight: 800;
+  letter-spacing: -.038em;
+  line-height: 1.12;
+}
+.step { margin: 0; }
+.step + .step { margin-top: 30px; }
+.step p {
+  margin: 0 0 14px;
+  color: #4b5970;
+  font-size: clamp(17px, 1.65vw, 20px);
+  line-height: 1.45;
+  text-align: left;
+}
+.step strong { font-weight: 700; color: #24344f; }
+figure { margin: 0; width: 100%; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* On the two-step page the lower, irrelevant part of the Google screenshot
+   is clipped, keeping the pin instructions fully visible AND exposing the
+   start of the second illustration on initial load. Natural height on mobile. */
+.figure-pin {
+  max-height: min(44vh, 430px);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 91%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 91%, transparent 100%);
+}
+@media (max-width: 640px) {
+  main { width: min(calc(100% - 24px), 1000px); padding: 18px 0 36px; }
+  .page-header { gap: 10px; margin-bottom: 20px; }
+  .page-header img { width: 44px; height: 44px; }
+  h1 { font-size: clamp(21px, 5.5vw, 30px); }
+  .step p { margin-bottom: 12px; font-size: 16px; }
+  .step + .step { margin-top: 24px; }
+  .figure-pin { max-height: none; mask-image: none; -webkit-mask-image: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
