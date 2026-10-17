@@ -1,21 +1,21 @@
-/* Backlink Monitoring Tool welcome pages. Static, local assets only. */
+/* Static two-scenario Welcome Page, no scripts or external resources. */
 :root {
   color-scheme: light;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 html { background: #fff; }
 body {
   margin: 0;
-  color: #101c34;
   background: #fff;
+  color: #101c34;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
 main {
   width: min(calc(100% - 40px), 1000px);
   margin: 0 auto;
-  padding: 27px 0 68px;
+  padding: 27px 0 64px;
 }
 .page-header {
   display: flex;
@@ -38,7 +38,7 @@ h1 {
   line-height: 1.12;
 }
 .step { margin: 0; }
-.step + .step { margin-top: 30px; }
+.step + .step { margin-top: 27px; }
 .step p {
   margin: 0 0 14px;
   color: #4b5970;
@@ -48,19 +48,14 @@ h1 {
 }
 .step strong { font-weight: 700; color: #24344f; }
 figure { margin: 0; width: 100%; }
-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* On the two-step page the lower, irrelevant part of the Google screenshot
-   is clipped, keeping the pin instructions fully visible AND exposing the
-   start of the second illustration on initial load. Natural height on mobile. */
+figure img { display: block; width: 100%; height: auto; }
+/* Clip only the irrelevant Google homepage BELOW the pin instruction so the
+   next screenshot starts to appear at common desktop viewport heights. */
 .figure-pin {
   max-height: min(44vh, 430px);
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 91%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 91%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 93%, transparent 100%);
 }
 @media (max-width: 640px) {
   main { width: min(calc(100% - 24px), 1000px); padding: 18px 0 36px; }
@@ -68,9 +63,6 @@ figure img {
   .page-header img { width: 44px; height: 44px; }
   h1 { font-size: clamp(21px, 5.5vw, 30px); }
   .step p { margin-bottom: 12px; font-size: 16px; }
-  .step + .step { margin-top: 24px; }
+  .step + .step { margin-top: 23px; }
   .figure-pin { max-height: none; mask-image: none; -webkit-mask-image: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto !important; }
 }

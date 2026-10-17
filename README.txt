@@ -1,28 +1,15 @@
-Backlink Monitoring Tool — Welcome Pages
-========================================
+Backlink Monitoring Tool — Welcome Page (two installation scenarios)
 
-Files to publish together in the root of an external HTTPS website:
+Upload ALL files from this archive into the root of the existing public GitHub
+repository: backlink-monitoring-tool/backlink-monitoring-tool.github.io
+Keep the PNG files separate from the HTML, as supplied.
 
-  index.html   : icon hidden behind the Chrome puzzle menu (two illustrations)
-  toolbar.html : icon already visible in Chrome toolbar (one illustration)
-  style.css    : common responsive CSS
-  icon.png     : extension icon
-  step-pin.png : outlined puzzle (1), pin (2)
-  step-open-3.png : open extension after pinning (3)
-  step-open-1.png : open extension when already visible (red arrow, no number)
+https://backlink-monitoring-tool.github.io/
+    index.html — icon hidden behind Chrome's puzzle menu: steps 1, 2, 3, 4.
 
-The page header contains the icon and “Backlink Monitoring Tool Installed”
-on one row where space allows. Instruction text aligns with the illustrations.
-The first image on index.html is cropped below its instructions on desktop,
-so part of the next illustration is visible on the first screen. The browser
-page beneath the Chrome extension menu is intentionally not important.
+https://backlink-monitoring-tool.github.io/toolbar.html
+    toolbar.html — icon already shown in Chrome toolbar: steps 1, 2.
 
-Example addresses after publishing on GitHub Pages:
-  https://EXAMPLE.github.io/                (hidden icon)
-  https://EXAMPLE.github.io/toolbar.html     (visible icon)
-
-Selection between the two URLs is up to the extension's installer logic.
-These HTML pages do not inspect browser state or communicate with extension.
-No analytics, JavaScript, remote fonts, or external resource dependencies.
-
-Direct toolbar version: no numbered badge, only the red arrow pointing to the icon.
+No JavaScript, tracking, external assets, or network access is used by these pages.
+The extension already chooses the URL at first installation; this archive
+only updates site files, not the extension.
